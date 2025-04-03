@@ -1,0 +1,83 @@
+.main-upper-part{
+    display: flex;
+    margin-top: 12%;
+    gap: 20%;
+}
+.center{
+   padding-left: 20%;
+   padding-right: 20%;
+}
+
+.main-upper-part h1{
+    color: #333333;  
+    font-size: 40px;
+}
+
+.main-upper-part button{
+    margin-left: auto;
+
+}
+.dish{
+    width: 200px;
+    height: 300px;
+    background-color: antiquewhite;
+}
+
+.dish-img{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+}
+.order{
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+.order img{
+    width: 20px;
+}
+.option-section{
+    display: flex;
+    margin-left: 20%;
+    margin-right:20%;
+    margin-bottom: 50px;
+    color: #333333;
+    margin-top: 30px;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.dish-price{
+    color: brown;
+    margin-left: 50px;
+    margin-top: 4px;
+}
+.first-row{
+    display: flex;
+}
+.details{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+h2{
+    font-size: 20px;
+}
+@media (max-width:950px) {
+    .option-section{
+        margin-left: 0px;
+        margin-right: 0px;
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping on larger screens */
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+    .main-upper-part{
+        margin-left: 50px;
+    }
+    .main-upper-part button{
+        margin-top: 20px;
+        margin-left: 50px;
+       }
+}
