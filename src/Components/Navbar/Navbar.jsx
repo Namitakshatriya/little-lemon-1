@@ -1,5 +1,7 @@
+
 import React,{ useState }  from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import logo from '../../icons_assets/Logo.svg';
 import Hamburger from '../../icons_assets/Hamburger.svg';
 
@@ -13,13 +15,13 @@ const Navbar = () => {
 <img src={logo} alt="Logo" className="logo" />
 
       {/* Navigation Menu */}
-       <ul className={`navbar-menu ${menuOpen ? "active" : ""}`}>
-
-     <li onClick={()=>setMenu("Home")} className={menu=== "Home"?"active":"" }  >Home</li>      
-     <li onClick={()=>setMenu("About")} className={menu=== "About"?"active":"" }>About</li> 
-     <li onClick={()=>setMenu("Menu")} className={menu=== "Menu"?"active":"" }>Menu</li> 
-     <li onClick={()=>setMenu("Reservations")} className={menu=== "Reservations"?"active":"" }>Reservations</li> 
-     <li onClick={()=>setMenu("Order-Online")} className={menu=== "Order-Online"?"active":"" }>Order Online</li> 
+       {/* <ul className={`navbar-menu ${menuOpen ? "active" : ""}`}> */}
+      <ul className='navbar-menu'>
+     <li onClick={()=>setMenu("Home")} className={menu=== "Home"?"active":"" }><Link to="/">Home</Link></li>      
+     <li onClick={()=>setMenu("About")} className={menu=== "About"?"active":"" }><Link to="/about">About</Link></li> 
+     <li onClick={()=>setMenu("Menu")} className={menu=== "Menu"?"active":"" }> <Link to="/menu">Menu</Link></li> 
+     <li onClick={()=>setMenu("Reservations")} className={menu=== "Reservations"?"active":"" }><Link to="/reservations">Reservations</Link></li> 
+     <li onClick={()=>setMenu("Order-Online")} className={menu=== "Order-Online"?"active":"" }><Link to="/order-online">Order Online</Link></li> 
     </ul>
 </nav>
   )

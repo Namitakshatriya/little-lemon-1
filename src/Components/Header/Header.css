@@ -15,9 +15,11 @@
     margin-bottom: 5px;
 }
 
+
 .header-left h2 {
     font-size: 28px;
-    margin-bottom: 15px;
+    color: #EDEFEE;
+
 }
 
 .header-left button{
@@ -30,7 +32,7 @@ color: #F4CE14;
 font-size: 36px;
 }
 
-p{
+.header-left p{
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 30px;
