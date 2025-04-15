@@ -19,7 +19,6 @@
 }
 .dish{
     width: 200px;
-    height: 300px;
     background-color: antiquewhite;
 }
 
@@ -27,6 +26,10 @@
     width: 200px;
     height: 150px;
     object-fit: cover;
+}
+
+.Dish-name{
+    padding: 10%;
 }
 .order{
     display: flex;
@@ -36,6 +39,7 @@
 }
 .order img{
     width: 20px;
+    margin-bottom: 5%;
 }
 .option-section{
     display: flex;
@@ -48,18 +52,18 @@
     gap: 10%;
 }
 
+
 .dish-price{
     color: brown;
-    margin-left: 50px;
-    margin-top: 4px;
+    margin-left: 10%;
+    margin-top: 2px;
+    font-weight: 700;
+    font-size: 18px;
 }
 .first-row{
     display: flex;
 }
-.details{
-    margin-left: 5px;
-    margin-right: 5px;
-}
+
 .first-row h2{
     font-size: 20px;
 }

@@ -1,11 +1,13 @@
-import React from 'react';
+import React,{ useState }  from 'react';
 import './Footer.css'
 import logo from '../../icons_assets/Logo.svg';
+import { Link } from 'react-router-dom';
 import facebook from '../../icons_assets/facebook.png';
 import whatsapp from '../../icons_assets/whatsapp.png';
 import insta from '../../icons_assets/insta.png';
 
 const Footer = () => {
+    const [menu,setMenu] = useState("Home");
   return (
     <div className='footer' id='footer'>
         <div className="footer-content">
@@ -22,10 +24,11 @@ const Footer = () => {
             <div className="footer-content-center">
                 <h2>Compony</h2>
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Dilivery</li>
-                    <li>Privacy Policy</li>
+                <li onClick={()=>setMenu("Home")} className={menu=== "Home"?"active":"" }><Link to="/">Home</Link></li>      
+     <li onClick={()=>setMenu("About")} className={menu=== "About"?"active":"" }><Link to="/about">About</Link></li> 
+     <li onClick={()=>setMenu("Menu")} className={menu=== "Menu"?"active":"" }> <Link to="/menu">Menu</Link></li> 
+     <li onClick={()=>setMenu("Reservations")} className={menu=== "Reservations"?"active":"" }><Link to="/reservations">Reservations</Link></li> 
+     
                 </ul>
             </div>
             <div className="footer-content-right">

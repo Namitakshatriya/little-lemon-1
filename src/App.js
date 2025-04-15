@@ -7,6 +7,7 @@ import Menu from './Pages/Menu/Menu';
 import OrderOnline from './Pages/OrderOnline/OrderOnline';
 import Reservations from './Pages/Reservations/Reservations';
 import Footer from './Components/Footer/Footer';
+import BookingConfirmation from './Components/Form/BookingConfirmation';
 
 
 const App = () => {
@@ -19,7 +20,10 @@ const App = () => {
         <Route path='/Menu' element ={<Menu/>}/>
         <Route path='/OrderOnline' element ={<OrderOnline/>}/>
         <Route path='/Reservations' element ={<Reservations/>}/>
-      </Routes>
+        <Route path='/BookingConfirmation' element ={<BookingConfirmation/>}/>
+
+
+        </Routes>
       <Footer />
     </div>
   );
