@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Form.css';
 import { fetchAPI } from '../../api'; 
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 
 const Form = (props) => {
@@ -45,23 +47,6 @@ const Form = (props) => {
     setOccasion("");
   };
   
-  //   props.dispatch({
-  //     type: "BOOK_TIME",
-  //     date,
-  //     time,
-  //   });
-  //   navigate('/BookingConfirmation', {
-  //     state: {
-  //       name,
-  //       date,
-  //       selectedTime: time,
-  //       guests,
-  //     },
-  //   });
-  // };
-
-  
-
   const handleDateChange =  async (e) => {
     const selectedDate = e.target.value;
     setDate(selectedDate);
@@ -75,15 +60,22 @@ const Form = (props) => {
     });
   };
 
-  //   fetchAPI(dateObj).then(times => {
-  //     props.dispatch({
-  //       type: "SET_DATE_AND_TIMES",
-  //       time,
-  //     });
-  //   });
-  // };
+  
   const bookedTimes = props.bookedTimes?.[date] || [];
+  const [formValid, setFormValid] = useState(false);
 
+const validateForm = () => {
+  return (
+    name.trim() !== "" &&
+    date !== "" &&
+    time !== "" &&
+    guests >= 1 &&
+    occasion !== ""
+  );
+};
+useEffect(() => {
+  setFormValid(validateForm());
+}, [name, date, time, guests, occasion]);
   return (
     <header>
       <section>
@@ -136,7 +128,6 @@ const Form = (props) => {
                     {availableTime}
                   </option>
                 ))}
-              
 
               </select>
             </div>
@@ -175,7 +166,11 @@ const Form = (props) => {
 
 
             <div>
-              <button aria-label="Submit reservation form">Submit</button>
+              <button type="submit"
+                      disabled={!formValid} 
+                      aria-label="Submit reservation form">
+                        Submit
+                        </button>
             </div>
 
           </fieldset>
