@@ -82,7 +82,9 @@ useEffect(() => {
         <form className='reservation-form' onSubmit={handleSubmit}  aria-label="Table reservation form">
            <h1>Reserve a Table</h1>
           <fieldset>
-          <div>
+            <div className="row">
+            <div className="form-group">
+
               <label htmlFor="Name">Full Name</label>
               <input
                 id="full-name"
@@ -94,7 +96,25 @@ useEffect(() => {
                  aria-label="Full Name"
               />
             </div>
-            <div>
+            <div className="form-group">
+              <label htmlFor="book-guests">Number of guests</label>
+              <input
+                id="book-guests"
+                name="guests"
+                type="number"
+                min="1"
+                value={guests}
+                onChange={(e) => setGuests(e.target.value)}
+                required
+                aria-required="true"
+               aria-label="Number of guests"
+              />
+            </div>
+            </div>
+
+
+            <div className="row">
+            <div className="form-group">
               <label htmlFor="book-date">Select Date</label>
               <input
                 id="book-date"
@@ -106,9 +126,10 @@ useEffect(() => {
                 aria-label="Select reservation date"
               />
             </div>
+           
 
-            <div>
-              <label htmlFor="book-time">Select Time</label>
+            <div className="form-group">
+            <label htmlFor="book-time">Select Time</label>
               <select
                 id="book-time"
                 name="time"
@@ -131,23 +152,13 @@ useEffect(() => {
 
               </select>
             </div>
-
-            <div>
-              <label htmlFor="book-guests">Number of guests</label>
-              <input
-                id="book-guests"
-                name="guests"
-                type="number"
-                min="1"
-                value={guests}
-                onChange={(e) => setGuests(e.target.value)}
-                required
-                aria-required="true"
-               aria-label="Number of guests"
-              />
             </div>
 
-            <div>
+           
+
+            <div className="row">
+            <div className="form-group">
+
               <label htmlFor="book-occasion">Occasion</label>
               <select
                 id="book-occasion"
@@ -163,15 +174,23 @@ useEffect(() => {
                 <option value="Anniversary">Anniversary</option>
               </select>
             </div>
+            
 
 
-            <div>
-              <button type="submit"
-                      disabled={!formValid} 
-                      aria-label="Submit reservation form">
-                        Submit
-                        </button>
-            </div>
+            <div className="form-group">
+            <label htmlFor="comments">Comments</label>
+      <input
+        id="comments"
+        name="comments"
+        type="text"
+        placeholder="Add any comments"
+        aria-label="Additional comments"
+      />
+    </div>
+    </div>
+    <div className="form-button">
+     <button type="submit" disabled={!formValid} aria-label="Submit reservation form">Submit</button>
+     </div>
 
           </fieldset>
         </form>
