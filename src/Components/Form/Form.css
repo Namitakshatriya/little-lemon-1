@@ -35,6 +35,8 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
   .reservation-form button {
     padding: 0.6rem 1.5rem;
